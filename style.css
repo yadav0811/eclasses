@@ -1,0 +1,264 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    overflow-x: hidden; /* Lock horizontal scrolling */
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least 100% height */
+}
+
+html{
+    scroll-behavior: smooth;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Ensure the container takes available space */
+    padding: 0 10px; /* Added padding for small screens */
+}
+
+/* Background Image */
+.background-image {
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Glass Effect Card */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    width: 100%;
+    max-width: 400px; /* Adjusted for better responsiveness */
+}
+
+.card h2 span {
+    color: #ff7576;
+}
+
+/* Author Heading */
+.author-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff7576;
+    margin-bottom: 20px;
+}
+
+/* Glass Effect Calculator Box */
+.calculator-container {
+    display: none; /* Hidden initially */
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%; /* Adjusted width for responsiveness */
+    max-width: 600px;
+}
+
+.calculator-box, .result-box {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Result Box */
+.result-box {
+    display: none; /* Hidden initially */
+    text-align: center;
+}
+
+/* Labels and Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #ff7576;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #ffffff;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.input:focus, .input:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #ff7576;
+}
+
+.input::placeholder {
+    color: #e6dede;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+/* Inputs for Calculator Box */
+.input-field {
+    border: solid 1.5px #201f1f;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #201f1f;
+    margin-bottom: 12px;
+    transition: border-color 0.3s ease;
+    width: calc(100% - 20px);
+}
+
+.input-field:focus {
+    border-color: #007BFF;
+}
+
+/* Buttons */
+.rainbow-hover {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff7576;
+    background-color: #2B3044;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    position: relative;
+    line-height: 24px;
+    border-radius: 9px;
+    box-shadow: 0px 1px 2px #2B3044, 0px 4px 16px #2B3044;
+    transform-style: preserve-3d;
+    transform: scale(var(--s, 1)) perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    perspective: 600px;
+    transition: transform 0.1s;
+}
+
+.rainbow-hover:active {
+    transition: 0.3s;
+    transform: scale(0.93);
+}
+
+/* Result Text */
+#result {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 0px;
+    background-color: #333;
+    color: #2e2b2b;
+    font-family: 'Roboto', sans-serif;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 14px;
+    color: #fdfcfc;
+    letter-spacing: 2px;
+}
+
+footer a {
+    color: #ff7576;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: blanchedalmond;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .card {
+        max-width: none; /* Remove max-width for smaller screens */
+    }
+    
+    .input, .input-field {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .rainbow-hover {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card, .calculator-box, .result-box {
+        width: 100%;
+    }
+    
+    .input, .input-field {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .rainbow-hover {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}

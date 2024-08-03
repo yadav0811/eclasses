@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Classes | Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background-image"></div>
+        
+        <!-- Initial Card with Name Input -->
+        <div class="card" id="card">
+            <h1 class="author-heading">𝙰𝚍𝚒𝚝𝚢𝚊 𝚈𝚊𝚍𝚞𝚟𝚊𝚗𝚜𝚑𝚒</h1>
+            <h2><span>E</span>-Classes<span>.</span> | Percentage Calculator</h2>
+            <div class="input-group">
+                <input placeholder="Enter your name" type="text" id="name" class="input" required="">
+                <label class="user-label"></label>
+            </div>
+            <button id="continueBtn" class="rainbow-hover">Continue</button>
+        </div>
+        
+        <!-- Percentage Calculator Box -->
+        <div class="calculator-container">
+            <div class="calculator-box" id="calculatorBox">
+                <div id="userNameDisplay"></div><br>
+                <label for="hindi">Hindi:</label>
+                <input type="number" id="hindi" class="input-field">
+                <label for="maths">Mathematics:</label>
+                <input type="number" id="maths" class="input-field">
+                <label for="english">English:</label>
+                <input type="number" id="english" class="input-field">
+                <label for="ss">Social Science:</label>
+                <input type="number" id="ss" class="input-field">
+                <label for="science">Science:</label>
+                <input type="number" id="science" class="input-field">
+                <label for="total">Total Out Of:</label>
+                <select id="total" class="input-field">
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="150">150</option>
+                    <option value="200">200</option>
+                    <option value="400">400</option>
+                    <option value="500">500</option>
+                </select>
+                <button id="calculateBtn" class="rainbow-hover">Calculate</button>
+                <button id="backToHomeBtn" class="rainbow-hover">Return</button>
+            </div>
+            
+            <!-- Result Box -->
+            <div class="result-box" id="resultBox">
+                <div id="result"></div>
+                <button id="returnToCalculatorBtn" class="rainbow-hover">Return</button>
+                <button id="homeBtn" class="rainbow-hover">Home</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>By <a href="https://www.instagram.com/yadav_aditya_066?igsh=MTJyN2szZzJrNjZiaQ%3D%3D&utm_source=qr" target="_blank">Aditya Yaduvanshi</a> || E-Classes</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
